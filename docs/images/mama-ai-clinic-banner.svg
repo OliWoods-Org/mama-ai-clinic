@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0d1b2a"/>
+      <stop offset="50%" stop-color="#1b2838"/>
+      <stop offset="100%" stop-color="#1a5276"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#27ae60"/>
+      <stop offset="100%" stop-color="#2ecc71"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="200" rx="12" fill="url(#bg)"/>
+
+  <!-- Decorative grid dots -->
+  <g opacity="0.08" fill="white">
+    <circle cx="30" cy="30" r="1.5"/>
+    <circle cx="60" cy="30" r="1.5"/>
+    <circle cx="90" cy="30" r="1.5"/>
+    <circle cx="30" cy="60" r="1.5"/>
+    <circle cx="60" cy="60" r="1.5"/>
+    <circle cx="90" cy="60" r="1.5"/>
+    <circle cx="30" cy="90" r="1.5"/>
+    <circle cx="60" cy="90" r="1.5"/>
+    <circle cx="90" cy="90" r="1.5"/>
+    <circle cx="710" cy="110" r="1.5"/>
+    <circle cx="740" cy="110" r="1.5"/>
+    <circle cx="770" cy="110" r="1.5"/>
+    <circle cx="710" cy="140" r="1.5"/>
+    <circle cx="740" cy="140" r="1.5"/>
+    <circle cx="770" cy="140" r="1.5"/>
+    <circle cx="710" cy="170" r="1.5"/>
+    <circle cx="740" cy="170" r="1.5"/>
+    <circle cx="770" cy="170" r="1.5"/>
+  </g>
+
+  <!-- Pi icon (simplified) -->
+  <g transform="translate(50, 55)">
+    <rect x="0" y="0" width="80" height="80" rx="12" fill="#c51a4a" opacity="0.9"/>
+    <text x="40" y="52" text-anchor="middle" font-family="monospace" font-size="36" font-weight="bold" fill="white">Pi</text>
+    <rect x="10" y="68" width="14" height="6" rx="2" fill="white" opacity="0.7"/>
+    <rect x="28" y="68" width="14" height="6" rx="2" fill="white" opacity="0.7"/>
+    <rect x="56" y="68" width="14" height="6" rx="2" fill="white" opacity="0.7"/>
+  </g>
+
+  <!-- Cross icon -->
+  <g transform="translate(105, 55)" opacity="0.6">
+    <text x="15" y="50" font-family="system-ui" font-size="30" fill="white">+</text>
+  </g>
+
+  <!-- AI icon -->
+  <g transform="translate(140, 55)">
+    <rect x="0" y="0" width="80" height="80" rx="12" fill="url(#accent)" opacity="0.9"/>
+    <text x="40" y="52" text-anchor="middle" font-family="monospace" font-size="32" font-weight="bold" fill="white">AI</text>
+  </g>
+
+  <!-- Title text -->
+  <text x="260" y="82" font-family="system-ui, -apple-system, sans-serif" font-size="42" font-weight="800" fill="white" letter-spacing="-1">
+    MAMA AI Clinic
+  </text>
+
+  <!-- Subtitle -->
+  <text x="260" y="112" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#8899aa">
+    Offline AI Health Assistant for Raspberry Pi 5
+  </text>
+
+  <!-- Stats bar -->
+  <g transform="translate(260, 130)">
+    <rect x="0" y="0" width="80" height="26" rx="13" fill="#c51a4a" opacity="0.2"/>
+    <text x="40" y="17" text-anchor="middle" font-family="monospace" font-size="11" font-weight="600" fill="#e74c6f">$170/site</text>
+
+    <rect x="90" y="0" width="100" height="26" rx="13" fill="#27ae60" opacity="0.2"/>
+    <text x="140" y="17" text-anchor="middle" font-family="monospace" font-size="11" font-weight="600" fill="#2ecc71">100% Offline</text>
+
+    <rect x="200" y="0" width="90" height="26" rx="13" fill="#2980b9" opacity="0.2"/>
+    <text x="245" y="17" text-anchor="middle" font-family="monospace" font-size="11" font-weight="600" fill="#3498db">Apache 2.0</text>
+
+    <rect x="300" y="0" width="100" height="26" rx="13" fill="#f39c12" opacity="0.2"/>
+    <text x="350" y="17" text-anchor="middle" font-family="monospace" font-size="11" font-weight="600" fill="#f1c40f">WHO IMNCI</text>
+  </g>
+
+  <!-- Foundation credit -->
+  <text x="260" y="185" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#556677">
+    OliWoods Foundation &mdash; Open-source AI for humanitarian impact
+  </text>
+</svg>
