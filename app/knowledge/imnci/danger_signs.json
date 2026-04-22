@@ -1,0 +1,29 @@
+{
+  "source": "WHO IMNCI Chart Booklet",
+  "general_danger_signs": [
+    {
+      "code": "not_able_to_drink_or_breastfeed",
+      "label": "Not able to drink or breastfeed",
+      "explanation": "A child who cannot take any oral fluid is at risk of dehydration and cannot take oral medicines. This sign alone warrants urgent referral.",
+      "how_to_assess": "Ask the mother to offer breast or a cup of clean water. Watch: can the child take the fluid into their mouth and swallow?"
+    },
+    {
+      "code": "vomits_everything",
+      "label": "Vomits everything",
+      "explanation": "If a child vomits everything, they cannot retain oral medication or rehydration fluid. Intravenous treatment may be needed.",
+      "how_to_assess": "Ask the mother: has the child vomited everything in the last several hours? A child who keeps down some fluids does not 'vomit everything'."
+    },
+    {
+      "code": "convulsions",
+      "label": "Convulsions during this illness",
+      "explanation": "Convulsions may indicate meningitis, cerebral malaria, or other serious conditions requiring urgent hospital care.",
+      "how_to_assess": "Ask the mother: has the child had convulsions (fits) during this illness? Describe: arms and legs stiffen, body shakes, child may lose consciousness."
+    },
+    {
+      "code": "lethargic_or_unconscious",
+      "label": "Lethargic or unconscious",
+      "explanation": "A lethargic or unconscious child may have meningitis, severe malaria, severe dehydration, or other life-threatening conditions.",
+      "how_to_assess": "A lethargic child is drowsy and does not show interest in surroundings. Cannot be fully awakened. An unconscious child does not respond to voice or touch."
+    }
+  ]
+}

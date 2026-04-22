@@ -1,0 +1,39 @@
+# Pi AI Clinic -- Inference Configuration
+# Tuned for Raspberry Pi 5 (8GB) with Gemma 4 E2B
+
+model:
+  # Default: Gemma 4 E2B Q4_K_M -- best balance of quality and speed on Pi 5
+  path: /opt/pi-ai-clinic/models/gemma-4-e2b-Q4_K_M.gguf
+  # Fallback: uncomment for Gemma 3 1B (faster, lower quality)
+  # path: /opt/pi-ai-clinic/models/gemma-3-1b-Q4_K_M.gguf
+
+server:
+  host: 127.0.0.1
+  port: 8081
+  # Number of CPU threads -- Pi 5 has 4 Cortex-A76 cores
+  threads: 4
+  # Context window -- 2048 is sufficient for clinical Q&A, saves RAM
+  context_size: 2048
+  # Batch size for prompt processing
+  batch_size: 512
+  # Number of parallel request slots (1 = sequential, saves RAM)
+  parallel: 1
+
+performance:
+  # Expected tokens/second on Pi 5 with active cooling
+  # Gemma 4 E2B Q4_K_M: ~8-12 tok/s
+  # Gemma 3 1B Q4_K_M: ~15-20 tok/s
+  # If below 5 tok/s, check: active cooler connected? thermal throttling?
+  min_acceptable_tps: 5
+
+safety:
+  # Maximum tokens per response -- prevents runaway generation
+  max_tokens: 512
+  # Temperature -- lower = more deterministic, important for medical context
+  temperature: 0.3
+  # Top-p sampling
+  top_p: 0.9
+  # Stop sequences
+  stop_sequences:
+    - "<end_of_turn>"
+    - "---"

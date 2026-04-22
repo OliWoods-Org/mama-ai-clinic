@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Status - MAMA AI Clinic{% endblock %}
+
+{% block content %}
+<h1 style="font-size: 22px; margin-bottom: 16px;">System Status</h1>
+
+<div class="status-grid" id="statusGrid">
+    <div class="status-item">
+        <div class="value" id="llmStatus">...</div>
+        <div class="label">AI Model</div>
+    </div>
+    <div class="status-item">
+        <div class="value" id="cpuTemp">--</div>
+        <div class="label">CPU Temp</div>
+    </div>
+    <div class="status-item">
+        <div class="value" id="ramUsed">--</div>
+        <div class="label">RAM Used</div>
+    </div>
+    <div class="status-item">
+        <div class="value" id="uptime">--</div>
+        <div class="label">Uptime</div>
+    </div>
+</div>
+
+<div class="card" style="margin-top: 16px;">
+    <h3>About MAMA AI Clinic</h3>
+    <p style="font-size: 13px; line-height: 1.6;">
+        Running fully offline on Raspberry Pi 5. No internet connection required.
+        <br><br>
+        <strong>Model:</strong> Gemma 4 E2B (Q4_K_M quantization)<br>
+        <strong>Knowledge:</strong> WHO IMNCI + Essential Medicines List<br>
+        <strong>License:</strong> Apache 2.0
+    </p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+fetch('/status/health')
+    .then(r => r.json())
+    .then(d => {
+        document.getElementById('llmStatus').textContent = d.llm_server === 'online' ? 'Online' : 'Offline';
+        document.getElementById('llmStatus').style.color = d.llm_server === 'online' ? 'var(--color-green)' : 'var(--color-red)';
+        if (d.cpu_temp_c != null) document.getElementById('cpuTemp').textContent = d.cpu_temp_c + 'C';
+        if (d.ram_used_pct != null) document.getElementById('ramUsed').textContent = d.ram_used_pct + '%';
+        if (d.uptime) document.getElementById('uptime').textContent = d.uptime;
+    })
+    .catch(() => {
+        document.getElementById('llmStatus').textContent = 'Error';
+        document.getElementById('llmStatus').style.color = 'var(--color-red)';
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Ask - MAMA AI Clinic{% endblock %}
+
+{% block content %}
+<div class="chat-container">
+    <div class="chat-messages" id="chatMessages">
+        <div class="chat-bubble assistant">
+            Hello! I'm your health knowledge assistant. Ask me any health question and I'll answer using WHO guidelines.
+            <br><br>
+            For symptom assessment, use the <strong>Triage</strong> tool.
+            For medication dosing, use the <strong>Medicines</strong> tool.
+        </div>
+    </div>
+    <div class="chat-input-row">
+        <input type="text" id="chatInput" placeholder="Ask a health question..." autocomplete="off">
+        <button id="chatSend">Send</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+{% endblock %}

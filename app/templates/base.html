@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1a5276">
+    <title>{% block title %}MAMA AI Clinic{% endblock %}</title>
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-bar">
+            <a href="/" class="logo">MAMA AI Clinic</a>
+            <a href="/status/" class="status-dot" id="statusDot" title="System Status"></a>
+        </div>
+        <div class="disclaimer-bar">
+            Decision-support tool only. Not a medical device. Verify all recommendations with a qualified health worker.
+        </div>
+    </header>
+
+    <main class="app-main">
+        {% block content %}{% endblock %}
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="/triage/" class="nav-item {% if request.path.startswith('/triage') %}active{% endif %}">
+            <span class="nav-icon">+</span>
+            <span class="nav-label">Triage</span>
+        </a>
+        <a href="/medicines/" class="nav-item {% if request.path.startswith('/medicines') %}active{% endif %}">
+            <span class="nav-icon">Rx</span>
+            <span class="nav-label">Medicines</span>
+        </a>
+        <a href="/training/" class="nav-item {% if request.path.startswith('/training') %}active{% endif %}">
+            <span class="nav-icon">?</span>
+            <span class="nav-label">Training</span>
+        </a>
+        <a href="/chat/" class="nav-item {% if request.path.startswith('/chat') %}active{% endif %}">
+            <span class="nav-icon">...</span>
+            <span class="nav-label">Ask</span>
+        </a>
+    </nav>
+
+    <script>
+        // Check LLM server status
+        fetch('/status/health')
+            .then(r => r.json())
+            .then(d => {
+                const dot = document.getElementById('statusDot');
+                dot.classList.add(d.llm_server === 'online' ? 'online' : 'offline');
+            })
+            .catch(() => {
+                document.getElementById('statusDot').classList.add('offline');
+            });
+    </script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

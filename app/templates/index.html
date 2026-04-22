@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}MAMA AI Clinic{% endblock %}
+
+{% block content %}
+<div class="home-screen">
+    <div class="hero">
+        <h1>MAMA AI Clinic</h1>
+        <p class="subtitle">Offline AI health assistant for community health workers</p>
+    </div>
+
+    <div class="tool-grid">
+        <a href="/triage/" class="tool-card triage-card">
+            <div class="tool-icon">+</div>
+            <h2>Triage</h2>
+            <p>Assess symptoms using WHO IMNCI guidelines. Classify urgency and recommended actions.</p>
+        </a>
+
+        <a href="/medicines/" class="tool-card medicines-card">
+            <div class="tool-icon">Rx</div>
+            <h2>Medicines</h2>
+            <p>Look up essential medicines. Calculate weight-based dosing from WHO tables.</p>
+        </a>
+
+        <a href="/training/" class="tool-card training-card">
+            <div class="tool-icon">?</div>
+            <h2>Training</h2>
+            <p>Practice clinical skills with AI-guided case studies and quizzes.</p>
+        </a>
+
+        <a href="/chat/" class="tool-card chat-card">
+            <div class="tool-icon">...</div>
+            <h2>Ask</h2>
+            <p>Ask general health questions. Get answers based on WHO guidelines.</p>
+        </a>
+    </div>
+
+    <div class="info-footer">
+        <p>Running fully offline on this device. No internet required.</p>
+        <p><a href="/status/">System Status</a></p>
+    </div>
+</div>
+{% endblock %}

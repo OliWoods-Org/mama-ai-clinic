@@ -1,0 +1,54 @@
+{
+  "modules": [
+    {
+      "id": "imnci_basics",
+      "title": "Introduction to IMNCI",
+      "description": "Learn the Integrated Management of Neonatal and Childhood Illness framework",
+      "objectives": [
+        "Explain what IMNCI is and why it matters",
+        "Describe the assess-classify-treat approach",
+        "Identify the four general danger signs"
+      ]
+    },
+    {
+      "id": "danger_signs",
+      "title": "Recognizing General Danger Signs",
+      "description": "Learn to identify the four signs that always require urgent referral",
+      "objectives": [
+        "Name all four general danger signs",
+        "Demonstrate how to check each sign",
+        "Explain why each sign is dangerous"
+      ]
+    },
+    {
+      "id": "diarrhea_management",
+      "title": "Diarrhea Assessment and ORS",
+      "description": "Classify dehydration and prepare ORS",
+      "objectives": [
+        "Assess dehydration using IMNCI criteria",
+        "Classify as severe, some, or no dehydration",
+        "Prepare and administer ORS correctly"
+      ]
+    },
+    {
+      "id": "pneumonia",
+      "title": "Cough and Breathing Assessment",
+      "description": "Count breathing rates and classify pneumonia",
+      "objectives": [
+        "Count breathing rate accurately for one full minute",
+        "Know fast breathing thresholds for each age group",
+        "Identify chest indrawing and stridor"
+      ]
+    },
+    {
+      "id": "case_study",
+      "title": "Practice Case Studies",
+      "description": "Work through realistic patient scenarios with AI guidance",
+      "objectives": [
+        "Apply IMNCI assessment steps in order",
+        "Classify patients correctly",
+        "Identify appropriate treatment actions"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "source": "WHO IMNCI classification summary",
+  "color_codes": {
+    "RED": {
+      "meaning": "Urgent referral or admission",
+      "action": "Give pre-referral treatment. REFER URGENTLY to hospital.",
+      "examples": ["Severe dehydration", "Severe pneumonia", "Very severe febrile disease"]
+    },
+    "YELLOW": {
+      "meaning": "Specific treatment at facility",
+      "action": "Treat at health facility. Advise when to return. Follow up.",
+      "examples": ["Pneumonia", "Some dehydration", "Malaria"]
+    },
+    "GREEN": {
+      "meaning": "Home management",
+      "action": "Advise on home care. Advise when to return immediately.",
+      "examples": ["Cough or cold", "No dehydration", "Fever - likely viral"]
+    }
+  }
+}

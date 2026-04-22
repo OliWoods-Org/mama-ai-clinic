@@ -1,0 +1,46 @@
+{
+  "cases": [
+    {
+      "id": "case_001",
+      "title": "14-month-old with diarrhea",
+      "presentation": "A mother brings her 14-month-old daughter to the health post. The child has had watery diarrhea for 3 days.",
+      "patient": {
+        "age_months": 14,
+        "weight_kg": 9.5,
+        "sex": "female"
+      },
+      "findings": {
+        "danger_signs": {
+          "able_to_drink": true,
+          "vomits_everything": false,
+          "convulsions": false,
+          "lethargic": false
+        },
+        "diarrhea": {
+          "duration_days": 3,
+          "blood_in_stool": false,
+          "eyes": "normal",
+          "skin_pinch": "slow",
+          "drinking": "eager",
+          "restless": true
+        }
+      },
+      "expected_classification": {
+        "danger_signs": "None",
+        "diarrhea": "SOME DEHYDRATION",
+        "color": "YELLOW"
+      },
+      "expected_treatment": [
+        "Give ORS (Plan B): treat in facility for 4 hours",
+        "Give zinc supplement for 10-14 days",
+        "Continue breastfeeding",
+        "Follow up in 5 days"
+      ],
+      "teaching_points": [
+        "Two signs of dehydration (restless + drinks eagerly + skin pinch slow) = SOME dehydration",
+        "Plan B means 4 hours of supervised ORS at the facility",
+        "Zinc reduces duration and severity of diarrhea"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "source": "WHO IMNCI dosing recommendations + WHO EML formulary",
+  "version": "seed_data",
+  "note": "Seed data for development. Must be clinically verified before field deployment.",
+  "amoxicillin": {
+    "tablet_250mg": {
+      "indication": "pneumonia",
+      "frequency": "Twice daily (every 12 hours)",
+      "duration": "5 days",
+      "max_dose": "500mg per dose",
+      "weight_bands": [
+        {"min_kg": 4, "max_kg": 10, "dose": "1 tablet (250mg)"},
+        {"min_kg": 10, "max_kg": 19, "dose": "2 tablets (500mg)"},
+        {"min_kg": 19, "max_kg": 35, "dose": "3 tablets (750mg)"},
+        {"min_kg": 35, "max_kg": 999, "dose": "4 tablets (1000mg)"}
+      ],
+      "age_bands": [
+        {"min_years": 0.17, "max_years": 1, "dose": "1 tablet (250mg)"},
+        {"min_years": 1, "max_years": 5, "dose": "2 tablets (500mg)"},
+        {"min_years": 5, "max_years": 12, "dose": "3 tablets (750mg)"},
+        {"min_years": 12, "max_years": 999, "dose": "4 tablets (1000mg)"}
+      ]
+    },
+    "syrup_125mg_5ml": {
+      "indication": "pneumonia",
+      "frequency": "Twice daily (every 12 hours)",
+      "duration": "5 days",
+      "weight_bands": [
+        {"min_kg": 4, "max_kg": 10, "dose": "10ml (250mg)"},
+        {"min_kg": 10, "max_kg": 19, "dose": "15ml (375mg)"},
+        {"min_kg": 19, "max_kg": 35, "dose": "20ml (500mg)"}
+      ],
+      "age_bands": [
+        {"min_years": 0.17, "max_years": 1, "dose": "10ml (250mg)"},
+        {"min_years": 1, "max_years": 5, "dose": "15ml (375mg)"}
+      ]
+    }
+  },
+  "paracetamol": {
+    "tablet_500mg": {
+      "indication": "fever >= 38.5C or pain",
+      "frequency": "Every 6 hours as needed (max 4 doses per day)",
+      "duration": "As needed, reassess if fever persists > 3 days",
+      "max_dose": "1000mg per dose, 4000mg per day",
+      "weight_bands": [
+        {"min_kg": 5, "max_kg": 10, "dose": "1/4 tablet (125mg)", "notes": "Crush and mix with water"},
+        {"min_kg": 10, "max_kg": 15, "dose": "1/2 tablet (250mg)", "notes": "Crush and mix with water"},
+        {"min_kg": 15, "max_kg": 25, "dose": "1/2 tablet (250mg)"},
+        {"min_kg": 25, "max_kg": 40, "dose": "1 tablet (500mg)"},
+        {"min_kg": 40, "max_kg": 999, "dose": "1-2 tablets (500-1000mg)"}
+      ],
+      "age_bands": [
+        {"min_years": 0.25, "max_years": 1, "dose": "1/4 tablet (125mg)"},
+        {"min_years": 1, "max_years": 3, "dose": "1/2 tablet (250mg)"},
+        {"min_years": 3, "max_years": 5, "dose": "1/2 tablet (250mg)"},
+        {"min_years": 5, "max_years": 12, "dose": "1 tablet (500mg)"},
+        {"min_years": 12, "max_years": 999, "dose": "1-2 tablets (500-1000mg)"}
+      ]
+    },
+    "syrup_120mg_5ml": {
+      "indication": "fever >= 38.5C or pain",
+      "frequency": "Every 6 hours as needed (max 4 doses per day)",
+      "duration": "As needed",
+      "weight_bands": [
+        {"min_kg": 5, "max_kg": 10, "dose": "5ml (120mg)"},
+        {"min_kg": 10, "max_kg": 15, "dose": "7.5ml (180mg)"},
+        {"min_kg": 15, "max_kg": 25, "dose": "10ml (240mg)"},
+        {"min_kg": 25, "max_kg": 40, "dose": "15ml (360mg)"}
+      ],
+      "age_bands": [
+        {"min_years": 0.25, "max_years": 1, "dose": "5ml (120mg)"},
+        {"min_years": 1, "max_years": 3, "dose": "7.5ml (180mg)"},
+        {"min_years": 3, "max_years": 5, "dose": "10ml (240mg)"}
+      ]
+    }
+  },
+  "oral_rehydration_salts": {
+    "sachet_1L": {
+      "indication": "diarrhea with dehydration",
+      "frequency": "Plan A: after each loose stool. Plan B: over 4 hours. Plan C: IV + ORS.",
+      "duration": "Until diarrhea stops",
+      "weight_bands": [
+        {"min_kg": 4, "max_kg": 6, "dose": "200-400ml over 4 hours (Plan B)"},
+        {"min_kg": 6, "max_kg": 10, "dose": "400-700ml over 4 hours (Plan B)"},
+        {"min_kg": 10, "max_kg": 12, "dose": "700-900ml over 4 hours (Plan B)"},
+        {"min_kg": 12, "max_kg": 19, "dose": "900-1400ml over 4 hours (Plan B)"},
+        {"min_kg": 19, "max_kg": 999, "dose": "1200-2200ml over 4 hours (Plan B)"}
+      ],
+      "age_bands": [
+        {"min_years": 0, "max_years": 0.33, "dose": "200-400ml over 4 hours (Plan B)"},
+        {"min_years": 0.33, "max_years": 1, "dose": "400-700ml over 4 hours (Plan B)"},
+        {"min_years": 1, "max_years": 2, "dose": "700-900ml over 4 hours (Plan B)"},
+        {"min_years": 2, "max_years": 5, "dose": "900-1400ml over 4 hours (Plan B)"}
+      ]
+    }
+  },
+  "zinc_sulfate": {
+    "tablet_20mg": {
+      "indication": "adjunct to ORS for diarrhea",
+      "frequency": "Once daily",
+      "duration": "10-14 days (continue even after diarrhea stops)",
+      "weight_bands": [
+        {"min_kg": 0, "max_kg": 999, "dose": "See age-based dosing"}
+      ],
+      "age_bands": [
+        {"min_years": 0, "max_years": 0.5, "dose": "1/2 tablet (10mg) dissolved in breastmilk or water"},
+        {"min_years": 0.5, "max_years": 999, "dose": "1 tablet (20mg) dissolved in water"}
+      ]
+    }
+  },
+  "artemether_lumefantrine": {
+    "tablet_20_120mg": {
+      "indication": "uncomplicated malaria",
+      "frequency": "Twice daily (0, 8, 24, 36, 48, 60 hours = 6 doses total)",
+      "duration": "3 days (6 doses)",
+      "weight_bands": [
+        {"min_kg": 5, "max_kg": 15, "dose": "1 tablet per dose"},
+        {"min_kg": 15, "max_kg": 25, "dose": "2 tablets per dose"},
+        {"min_kg": 25, "max_kg": 35, "dose": "3 tablets per dose"},
+        {"min_kg": 35, "max_kg": 999, "dose": "4 tablets per dose"}
+      ],
+      "age_bands": [
+        {"min_years": 0.25, "max_years": 3, "dose": "1 tablet per dose", "notes": "Crush and mix with water or food"},
+        {"min_years": 3, "max_years": 8, "dose": "2 tablets per dose"},
+        {"min_years": 8, "max_years": 12, "dose": "3 tablets per dose"},
+        {"min_years": 12, "max_years": 999, "dose": "4 tablets per dose"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "quizzes": [
+    {
+      "module": "danger_signs",
+      "questions": [
+        {
+          "question": "Which of the following is a general danger sign?",
+          "options": ["Runny nose", "Vomits everything", "Mild cough", "Skin rash"],
+          "correct": 1,
+          "explanation": "Vomiting everything is a general danger sign because the child cannot retain oral medication or rehydration fluid."
+        },
+        {
+          "question": "A child has a general danger sign. What should you do FIRST?",
+          "options": ["Give antibiotics", "Send home with advice", "Complete full assessment then refer urgently", "Wait and observe for 24 hours"],
+          "correct": 2,
+          "explanation": "Complete the full assessment quickly to identify all problems, give pre-referral treatment, then refer urgently to hospital."
+        },
+        {
+          "question": "How do you check if a child is lethargic?",
+          "options": ["Take temperature", "Check if child is drowsy and does not show interest in surroundings", "Count breathing rate", "Check skin pinch"],
+          "correct": 1,
+          "explanation": "A lethargic child is drowsy, does not show interest in what is happening around them, and cannot be fully awakened."
+        }
+      ]
+    },
+    {
+      "module": "pneumonia",
+      "questions": [
+        {
+          "question": "What is the fast breathing threshold for a child aged 2-12 months?",
+          "options": ["30 breaths/min", "40 breaths/min", "50 breaths/min", "60 breaths/min"],
+          "correct": 2,
+          "explanation": "For children 2 months to 12 months, fast breathing is 50 breaths per minute or more."
+        },
+        {
+          "question": "What is the fast breathing threshold for a child aged 1-5 years?",
+          "options": ["30 breaths/min", "40 breaths/min", "50 breaths/min", "60 breaths/min"],
+          "correct": 1,
+          "explanation": "For children 12 months to 5 years, fast breathing is 40 breaths per minute or more."
+        }
+      ]
+    }
+  ]
+}

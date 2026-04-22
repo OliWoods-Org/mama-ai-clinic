@@ -1,0 +1,20 @@
+{
+  "source": "WHO formulary critical interactions",
+  "version": "seed_data",
+  "critical_interactions": [
+    {
+      "drug_a": "artemether_lumefantrine",
+      "drug_b": "cotrimoxazole",
+      "severity": "moderate",
+      "description": "Monitor for QT prolongation when used together",
+      "action": "Use with caution; monitor if possible"
+    },
+    {
+      "drug_a": "paracetamol",
+      "drug_b": "artemether_lumefantrine",
+      "severity": "low",
+      "description": "No significant interaction",
+      "action": "Safe to use together"
+    }
+  ]
+}

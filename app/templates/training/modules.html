@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+{% block title %}Training - MAMA AI Clinic{% endblock %}
+
+{% block content %}
+<h1 style="font-size: 22px; margin-bottom: 4px;">Health Worker Training</h1>
+<p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 16px;">
+    Interactive case studies and skill practice with AI tutor
+</p>
+
+<div class="card" onclick="startTraining('imnci_basics')" style="cursor:pointer">
+    <h3>IMNCI Basics</h3>
+    <p style="font-size:13px;color:var(--color-text-secondary)">
+        Learn the integrated management approach for sick children. Assessment, classification, and treatment.
+    </p>
+</div>
+
+<div class="card" onclick="startTraining('danger_signs')" style="cursor:pointer">
+    <h3>Recognizing Danger Signs</h3>
+    <p style="font-size:13px;color:var(--color-text-secondary)">
+        Practice identifying general danger signs that require urgent referral.
+    </p>
+</div>
+
+<div class="card" onclick="startTraining('diarrhea_management')" style="cursor:pointer">
+    <h3>Diarrhea Assessment & ORS</h3>
+    <p style="font-size:13px;color:var(--color-text-secondary)">
+        Classify dehydration severity and practice ORS preparation and administration.
+    </p>
+</div>
+
+<div class="card" onclick="startTraining('pneumonia')" style="cursor:pointer">
+    <h3>Pneumonia Assessment</h3>
+    <p style="font-size:13px;color:var(--color-text-secondary)">
+        Count breathing rates, identify chest indrawing, and classify cough cases.
+    </p>
+</div>
+
+<div class="card" onclick="startTraining('case_study')" style="cursor:pointer">
+    <h3>Practice Case Study</h3>
+    <p style="font-size:13px;color:var(--color-text-secondary)">
+        Work through a realistic patient scenario with AI-guided feedback.
+    </p>
+</div>
+
+<!-- Training chat interface (hidden until module selected) -->
+<div id="trainingChat" style="display:none; margin-top:16px;">
+    <div class="card">
+        <h3 id="trainingTitle"></h3>
+        <div id="trainingMessages" style="max-height:400px;overflow-y:auto;margin:12px 0;"></div>
+        <div class="chat-input-row">
+            <input type="text" id="trainingInput" placeholder="Your answer..." autocomplete="off">
+            <button id="trainingSend">Send</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+let trainingHistory = [];
+let currentModule = '';
+
+const MODULE_PROMPTS = {
+    imnci_basics: "Start a lesson on the basics of IMNCI. Explain what it stands for and why it matters in resource-limited settings. Then ask me a question to check my understanding.",
+    danger_signs: "Start a lesson on general danger signs in the IMNCI framework. Present them one by one and ask me to explain why each one is dangerous. Use the Socratic method.",
+    diarrhea_management: "Start a case study: a mother brings a 14-month-old child with diarrhea for 2 days. Guide me through the IMNCI assessment steps, asking me what to check at each step.",
+    pneumonia: "Start a lesson on assessing cough and difficulty breathing. Teach me how to count breathing rates accurately and what the fast breathing thresholds are for different age groups.",
+    case_study: "Present me with a realistic clinical case study of a sick child in a village health post. Reveal information step by step as I ask questions. Guide me through the IMNCI assessment process.",
+};
+
+function startTraining(module) {
+    currentModule = module;
+    trainingHistory = [];
+    document.getElementById('trainingTitle').textContent = document.querySelector(`[onclick*="${module}"] h3`).textContent;
+    document.getElementById('trainingMessages').innerHTML = '<div style="color:var(--color-text-secondary);font-size:13px;">Starting module...</div>';
+    document.getElementById('trainingChat').style.display = 'block';
+    document.getElementById('trainingChat').scrollIntoView({ behavior: 'smooth' });
+
+    // Send initial prompt
+    sendTrainingMessage(MODULE_PROMPTS[module] || "Start a general IMNCI training session.");
+}
+
+async function sendTrainingMessage(text) {
+    const messages = document.getElementById('trainingMessages');
+
+    if (text !== MODULE_PROMPTS[currentModule]) {
+        const userDiv = document.createElement('div');
+        userDiv.className = 'chat-bubble user';
+        userDiv.textContent = text;
+        messages.appendChild(userDiv);
+    }
+
+    trainingHistory.push({ role: 'user', content: text });
+
+    const loadingDiv = document.createElement('div');
+    loadingDiv.className = 'chat-bubble assistant';
+    loadingDiv.innerHTML = '<span class="loading"></span>';
+    messages.appendChild(loadingDiv);
+    messages.scrollTop = messages.scrollHeight;
+
+    try {
+        const resp = await fetch('/training/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ messages: trainingHistory, module: currentModule }),
+        });
+        const data = await resp.json();
+        loadingDiv.textContent = data.response;
+        trainingHistory.push({ role: 'assistant', content: data.response });
+    } catch (err) {
+        loadingDiv.textContent = 'Error reaching AI tutor. Check system status.';
+    }
+    messages.scrollTop = messages.scrollHeight;
+}
+
+document.getElementById('trainingSend').addEventListener('click', () => {
+    const input = document.getElementById('trainingInput');
+    const text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+    sendTrainingMessage(text);
+});
+
+document.getElementById('trainingInput').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        document.getElementById('trainingSend').click();
+    }
+});
+</script>
+{% endblock %}

@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r app/requirements.txt pytest
+
+      - name: Run unit tests
+        run: cd app && python -m pytest ../tests/ -v
+
+      - name: Run safety evaluation
+        run: |
+          cd app && python -c "
+          import sys
+          sys.path.insert(0, '..')
+          from eval.safety_eval import run_safety_eval
+          passed, failed, results = run_safety_eval()
+          for r in results:
+              print(f'  [{r[\"status\"]}] {r[\"name\"]}')
+          if failed > 0:
+              print(f'SAFETY EVAL FAILED: {failed} red-line cases missed')
+              sys.exit(1)
+          print(f'All {passed} safety cases passed.')
+          "
+
+      - name: Validate knowledge bases
+        run: |
+          python -c "
+          import json, glob, sys
+          errors = 0
+          for f in glob.glob('app/knowledge/**/*.json', recursive=True):
+              try:
+                  with open(f) as fh:
+                      json.load(fh)
+                  print(f'  [OK] {f}')
+              except json.JSONDecodeError as e:
+                  print(f'  [FAIL] {f}: {e}')
+                  errors += 1
+          if errors:
+              sys.exit(1)
+          print('All knowledge base files are valid JSON.')
+          "

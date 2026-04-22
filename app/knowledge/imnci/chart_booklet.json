@@ -1,0 +1,136 @@
+{
+  "source": "WHO IMNCI Chart Booklet, 2014 revision",
+  "version": "1.0.0",
+  "last_updated": "2026-04-22",
+  "age_groups": {
+    "young_infant": {
+      "label": "Young infant (0 up to 2 months)",
+      "assessments": ["possible_serious_bacterial_infection", "diarrhea", "feeding_problem", "hiv"]
+    },
+    "child_2m_5y": {
+      "label": "Sick child (2 months up to 5 years)",
+      "assessments": ["danger_signs", "cough_breathing", "diarrhea", "fever", "ear", "malnutrition", "anemia", "hiv"]
+    }
+  },
+  "general_danger_signs": {
+    "description": "Check ALL sick children for general danger signs. Any single sign = urgent referral.",
+    "signs": [
+      {
+        "code": "not_able_to_drink_or_breastfeed",
+        "label": "Not able to drink or breastfeed",
+        "how_to_check": "Ask the mother: is the child able to drink or breastfeed? If not sure, ask her to offer the breast or a cup of water and observe."
+      },
+      {
+        "code": "vomits_everything",
+        "label": "Vomits everything",
+        "how_to_check": "Ask: does the child vomit everything? A child who vomits everything cannot keep down any food, fluids, or medicines."
+      },
+      {
+        "code": "convulsions",
+        "label": "Convulsions",
+        "how_to_check": "Ask: has the child had convulsions during this illness? Convulsions are uncontrolled stiffening and jerking movements."
+      },
+      {
+        "code": "lethargic_or_unconscious",
+        "label": "Lethargic or unconscious",
+        "how_to_check": "Check: is the child lethargic or unconscious? A lethargic child is not awake and alert when they should be. They may be drowsy and not respond normally to sounds or touch."
+      }
+    ],
+    "if_any_present": {
+      "classification": "PRESENCE OF GENERAL DANGER SIGN",
+      "color": "RED",
+      "action": "Complete assessment immediately. Give pre-referral treatment. REFER URGENTLY to hospital."
+    }
+  },
+  "assessments": {
+    "cough_breathing": {
+      "ask": ["Does the child have cough or difficult breathing?", "For how long?"],
+      "look_listen_feel": [
+        "Count the breaths in one minute (child must be calm)",
+        "Look for chest indrawing",
+        "Look and listen for stridor"
+      ],
+      "fast_breathing_thresholds": {
+        "2_months_to_12_months": {"rate": 50, "unit": "breaths per minute"},
+        "12_months_to_5_years": {"rate": 40, "unit": "breaths per minute"}
+      },
+      "classifications": [
+        {
+          "name": "SEVERE PNEUMONIA OR VERY SEVERE DISEASE",
+          "color": "RED",
+          "criteria": "Any general danger sign OR chest indrawing OR stridor in calm child",
+          "treatment": ["Give first dose of appropriate antibiotic", "Give first dose of artesunate if high malaria risk", "Refer URGENTLY to hospital"]
+        },
+        {
+          "name": "PNEUMONIA",
+          "color": "YELLOW",
+          "criteria": "Fast breathing",
+          "treatment": ["Give appropriate oral antibiotic for 5 days", "Soothe throat with safe remedy", "Advise when to return immediately", "Follow up in 2 days"]
+        },
+        {
+          "name": "COUGH OR COLD",
+          "color": "GREEN",
+          "criteria": "No signs of pneumonia or very severe disease",
+          "treatment": ["Soothe throat and cough with safe remedy", "Advise when to return immediately", "Follow up in 5 days if not improving"]
+        }
+      ]
+    },
+    "diarrhea": {
+      "ask": ["Does the child have diarrhea?", "For how long?", "Is there blood in the stool?"],
+      "look_feel": [
+        "Look at the child's general condition (lethargic/unconscious, restless/irritable)",
+        "Look: are the eyes sunken?",
+        "Offer fluid: is the child not able to drink, drinking eagerly, or drinking normally?",
+        "Pinch the skin of the abdomen: does it go back very slowly, slowly, or immediately?"
+      ],
+      "dehydration_classifications": [
+        {
+          "name": "SEVERE DEHYDRATION",
+          "color": "RED",
+          "criteria": "Two or more: lethargic/unconscious, sunken eyes, not able to drink, skin pinch very slow",
+          "treatment": ["Give IV fluids immediately (Plan C)", "If other severe classification: refer urgently with ORS"]
+        },
+        {
+          "name": "SOME DEHYDRATION",
+          "color": "YELLOW",
+          "criteria": "Two or more: restless/irritable, sunken eyes, drinks eagerly, skin pinch slow",
+          "treatment": ["Give ORS (Plan B): 4 hours in facility", "Continue breastfeeding", "Follow up in 5 days if not improving"]
+        },
+        {
+          "name": "NO DEHYDRATION",
+          "color": "GREEN",
+          "criteria": "Not enough signs for some or severe dehydration",
+          "treatment": ["Give ORS to take home (Plan A)", "Continue feeding", "Advise when to return"]
+        }
+      ]
+    },
+    "fever": {
+      "ask": ["Does the child have fever (by history or feels hot or temperature 37.5C or above)?", "For how long?", "Has the child had measles within the last 3 months?"],
+      "look_feel": [
+        "Look or feel for stiff neck",
+        "Look for signs of measles (generalized rash, cough/runny nose/red eyes)",
+        "Do malaria RDT if in malaria risk area"
+      ],
+      "classifications": [
+        {
+          "name": "VERY SEVERE FEBRILE DISEASE",
+          "color": "RED",
+          "criteria": "Any general danger sign OR stiff neck",
+          "treatment": ["Give first dose of appropriate antibiotic", "Give first dose of artesunate", "Treat to prevent low blood sugar", "REFER URGENTLY"]
+        },
+        {
+          "name": "MALARIA",
+          "color": "YELLOW",
+          "criteria": "RDT positive",
+          "treatment": ["Give first-line antimalarial (ACT)", "Give paracetamol for high fever", "Follow up in 2 days", "Advise when to return"]
+        },
+        {
+          "name": "FEVER - MALARIA UNLIKELY",
+          "color": "GREEN",
+          "criteria": "RDT negative or no malaria risk, no danger signs, no stiff neck",
+          "treatment": ["Give paracetamol for high fever", "Advise home care", "Advise when to return", "Follow up in 2 days if fever persists"]
+        }
+      ]
+    }
+  }
+}

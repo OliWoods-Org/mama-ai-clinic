@@ -1,0 +1,67 @@
+{
+  "source": "WHO Model List of Essential Medicines, 24th List (2025)",
+  "version": "seed_data",
+  "note": "This is seed data for development. Must be completed from full WHO EML before field deployment.",
+  "medicines": [
+    {
+      "id": "amoxicillin",
+      "name": "Amoxicillin",
+      "category": "Antibacterials",
+      "aliases": ["amoxycillin", "amox"],
+      "formulations": ["tablet_250mg", "tablet_500mg", "syrup_125mg_5ml", "syrup_250mg_5ml"],
+      "indications": ["pneumonia", "ear_infection", "urinary_tract_infection"],
+      "warnings": ["Check for penicillin allergy before giving"],
+      "contraindications": ["Known penicillin allergy"]
+    },
+    {
+      "id": "oral_rehydration_salts",
+      "name": "Oral Rehydration Salts (ORS)",
+      "category": "Medicines for diarrhea",
+      "aliases": ["ORS", "oral rehydration", "rehydration salts"],
+      "formulations": ["sachet_1L", "sachet_200ml"],
+      "indications": ["diarrhea", "dehydration"],
+      "warnings": ["Prepare with clean water only", "Discard after 24 hours"],
+      "contraindications": []
+    },
+    {
+      "id": "paracetamol",
+      "name": "Paracetamol",
+      "category": "Analgesics and antipyretics",
+      "aliases": ["acetaminophen", "panadol", "calpol"],
+      "formulations": ["tablet_500mg", "syrup_120mg_5ml", "suppository_125mg"],
+      "indications": ["fever", "pain"],
+      "warnings": ["Do not exceed maximum dose - liver damage risk", "Do not give more than 4 doses in 24 hours"],
+      "contraindications": ["Severe liver disease"]
+    },
+    {
+      "id": "artemether_lumefantrine",
+      "name": "Artemether + Lumefantrine (ACT)",
+      "category": "Antimalarials",
+      "aliases": ["ACT", "coartem", "AL"],
+      "formulations": ["tablet_20_120mg", "tablet_40_240mg"],
+      "indications": ["uncomplicated_malaria"],
+      "warnings": ["Give with fatty food to improve absorption", "Complete full 3-day course"],
+      "contraindications": ["First trimester pregnancy", "Severe malaria (use injectable artesunate)"]
+    },
+    {
+      "id": "zinc_sulfate",
+      "name": "Zinc sulfate",
+      "category": "Medicines for diarrhea",
+      "aliases": ["zinc", "zinc supplement"],
+      "formulations": ["tablet_20mg", "syrup_20mg_5ml"],
+      "indications": ["diarrhea_adjunct"],
+      "warnings": ["May cause vomiting if given on empty stomach"],
+      "contraindications": []
+    },
+    {
+      "id": "cotrimoxazole",
+      "name": "Cotrimoxazole (Sulfamethoxazole + Trimethoprim)",
+      "category": "Antibacterials",
+      "aliases": ["bactrim", "septrin", "SMX-TMP"],
+      "formulations": ["tablet_400_80mg", "tablet_100_20mg", "syrup_200_40mg_5ml"],
+      "indications": ["dysentery", "pneumocystis_prophylaxis", "urinary_tract_infection"],
+      "warnings": ["Ensure adequate fluid intake", "Monitor for skin rash - stop if rash develops"],
+      "contraindications": ["Sulfonamide allergy", "Severe liver or kidney disease"]
+    }
+  ]
+}

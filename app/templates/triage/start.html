@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block title %}Triage - MAMA AI Clinic{% endblock %}
+
+{% block content %}
+<h1 style="font-size: 22px; margin-bottom: 4px;">Symptom Assessment</h1>
+<p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 16px;">
+    WHO IMNCI-based triage classification
+</p>
+
+<form id="triageForm">
+    <!-- Step 1: Patient Info -->
+    <div class="card" id="step1">
+        <h3>1. Patient Information</h3>
+        <div class="form-group">
+            <label for="ageGroup">Age Group</label>
+            <select id="ageGroup" name="age_group" required>
+                <option value="">Select...</option>
+                <option value="0_to_2_months">0 - 2 months</option>
+                <option value="2_months_to_12_months">2 months - 12 months</option>
+                <option value="12_months_to_5_years">1 - 5 years</option>
+                <option value="5_plus_years">5+ years</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Step 2: Danger Signs -->
+    <div class="card" id="step2">
+        <h3>2. Check for General Danger Signs</h3>
+        <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 12px;">
+            Check ALL that apply. Any single danger sign = urgent referral.
+        </p>
+        <div class="form-group">
+            <label>
+                <input type="checkbox" name="danger_signs" value="not_able_to_drink_or_breastfeed">
+                Not able to drink or breastfeed
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                <input type="checkbox" name="danger_signs" value="vomits_everything">
+                Vomits everything
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                <input type="checkbox" name="danger_signs" value="convulsions">
+                Convulsions (now or recently)
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                <input type="checkbox" name="danger_signs" value="lethargic_or_unconscious">
+                Lethargic or unconscious
+            </label>
+        </div>
+    </div>
+
+    <!-- Step 3: Chief Complaint -->
+    <div class="card" id="step3">
+        <h3>3. Main Complaint</h3>
+        <div class="form-group">
+            <label for="complaint">What is the main problem?</label>
+            <select id="complaint" name="chief_complaint" required>
+                <option value="">Select...</option>
+                <option value="cough">Cough or difficulty breathing</option>
+                <option value="diarrhea">Diarrhea</option>
+                <option value="fever">Fever</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Step 4: Symptom Details (dynamic based on complaint) -->
+    <div class="card" id="symptomDetails" style="display: none;">
+        <h3>4. Assessment Details</h3>
+        <div id="symptomFields"></div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" id="assessBtn">
+        Assess Patient
+    </button>
+</form>
+
+<!-- Results -->
+<div id="results" style="display: none; margin-top: 16px;">
+    <div id="classificationBox"></div>
+    <div class="card" id="explanationBox" style="display: none;">
+        <h3>Explanation</h3>
+        <p id="explanationText"></p>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/triage.js') }}"></script>
+{% endblock %}
