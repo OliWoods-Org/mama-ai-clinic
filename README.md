@@ -13,6 +13,10 @@
   <img src="https://img.shields.io/badge/model-Gemma_4_E2B-4285F4?logo=google" alt="Gemma">
   <img src="https://img.shields.io/badge/internet-not_required-green" alt="Offline">
   <img src="https://img.shields.io/badge/cost-$170_per_site-orange" alt="Cost">
+  <br>
+  <a href="https://mama.oliwoods.ai"><img src="https://img.shields.io/badge/Built_with-MAMA-8b5cf6?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxMCIgY3k9IjEwIiByPSI4IiBmaWxsPSIjOGI1Y2Y2Ii8+PC9zdmc+" alt="Built with MAMA"></a>
+  <a href="https://cofounder.software"><img src="https://img.shields.io/badge/Powered_by-CoFounder-06b6d4?style=flat" alt="Powered by CoFounder"></a>
+  <a href="https://oliwoodsfoundation.org"><img src="https://img.shields.io/badge/OliWoods-Foundation-10b981?style=flat" alt="OliWoods Foundation"></a>
 </p>
 
 <p align="center">
