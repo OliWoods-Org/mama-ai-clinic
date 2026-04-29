@@ -1,0 +1,20 @@
+[project]
+name = "mama-ai-clinic"
+version = "0.2.0"
+description = "MAMA AI Clinic — Free AI-powered health guidance for underserved communities"
+requires-python = ">=3.9"
+license = "GPL-3.0-only"
+dependencies = [
+    "flask>=3.1.0",
+    "gunicorn>=23.0.0",
+    "pyyaml>=6.0.2",
+    "requests>=2.32.3",
+]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]
